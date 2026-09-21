@@ -1,5 +1,3 @@
-<!-- GitHub Pages -->
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -44,7 +42,59 @@
     <!-- EL GIRASOL ES LA PÁGINA -->
     <div id="flower" class="flower">
       <div class="flower__inner">
-        <div id="disc" class="disc"></div>
+        <div id="disc" class="disc">
+          <svg viewBox="0 0 200 200" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false" style="position:absolute; inset:0; width:100%; height:100%; display:block;">
+            <defs>
+              <radialGradient id="discBase" cx="50%" cy="38%" r="72%">
+                <stop offset="0%"  stop-color="#5a3115"/>
+                <stop offset="45%" stop-color="#3c1f0c"/>
+                <stop offset="78%" stop-color="#241006"/>
+                <stop offset="100%" stop-color="#140803"/>
+              </radialGradient>
+              <radialGradient id="discRim" cx="50%" cy="50%" r="50%">
+                <stop offset="82%" stop-color="#000" stop-opacity="0"/>
+                <stop offset="94%" stop-color="#7a4a1c" stop-opacity=".55"/>
+                <stop offset="100%" stop-color="#c9800a" stop-opacity=".4"/>
+              </radialGradient>
+              <radialGradient id="seedShade" cx="35%" cy="30%" r="70%">
+                <stop offset="0%" stop-color="#8a5424"/>
+                <stop offset="100%" stop-color="#1c0d05"/>
+              </radialGradient>
+            </defs>
+            <circle cx="100" cy="100" r="99" fill="url(#discBase)"/>
+            <g id="discSeeds"></g>
+            <circle cx="100" cy="100" r="99" fill="url(#discRim)"/>
+            <ellipse cx="80" cy="66" rx="46" ry="34" fill="#fff" opacity=".05"/>
+          </svg>
+          <script>
+            (() => {
+              const g = document.currentScript.previousElementSibling.querySelector('#discSeeds')
+                     || document.currentScript.parentElement.querySelector('#discSeeds');
+              const seeds = g || document.currentScript.closest('svg').querySelector('#discSeeds');
+              const rings = 15;
+              const cx = 100, cy = 100, rMax = 96;
+              let html = '';
+              for (let i = 1; i <= rings; i++) {
+                const r = (i / rings) * rMax;
+                const circumference = 2 * Math.PI * r;
+                const count = Math.max(6, Math.round(circumference / 5.4));
+                const rotOffset = i * 0.62;
+                const size = 3.6 - (i / rings) * 1.7;
+                for (let j = 0; j < count; j++) {
+                  const a = (j / count) * Math.PI * 2 + rotOffset;
+                  const jitterR = r + (Math.sin(j * 12.9 + i * 3.7) * 1.1);
+                  const x = cx + Math.cos(a) * jitterR;
+                  const y = cy + Math.sin(a) * jitterR;
+                  const rot = (a * 180 / Math.PI + 90).toFixed(1);
+                  const tone = 0.55 + (Math.abs(Math.sin(j * 4.1 + i)) * 0.45);
+                  const fill = i % 3 === 0 ? '#6b3d18' : (i % 3 === 1 ? '#3a1e0c' : '#241005');
+                  html += `<ellipse cx="${x.toFixed(2)}" cy="${y.toFixed(2)}" rx="${(size*0.55).toFixed(2)}" ry="${size.toFixed(2)}" fill="${fill}" opacity="${tone.toFixed(2)}" transform="rotate(${rot} ${x.toFixed(2)} ${y.toFixed(2)})"/>`;
+                }
+              }
+              seeds.innerHTML = html;
+            })();
+          </script>
+        </div>
         <div id="layerPetals" class="layer layer--petals"></div>
         <div id="layerFall" class="layer layer--fall"></div>
       </div>
@@ -83,10 +133,10 @@
     <button id="nextBtn" class="sr-only" type="button">Quitar un pétalo</button>
 
     <!-- Introducción -->
-    <section id="intro" class="intro">
+    <section id="intro" class="intro" style="background:#000000;">
       <div class="intro__inner">
-        <p id="introText" class="intro__text"></p>
-        <button id="startBtn" class="btn" type="button"></button>
+        <p id="introText" class="intro__text" style="color:#F5EDDA;"></p>
+        <button id="startBtn" class="btn" type="button" style="color:#F5EDDA; border-color:rgba(245,237,218,.5);"></button>
       </div>
     </section>
   </main>
