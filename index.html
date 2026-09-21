@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#0E0703">
+  <title>Para ti</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Gradientes compartidos por todos los pétalos (los colores se cambian en style.css → :root) -->
+  <svg class="defs" width="0" height="0" aria-hidden="true" focusable="false">
+    <defs>
+      <linearGradient id="gPetal" x1="0" y1="1" x2="0" y2="0">
+        <stop offset="0"   style="stop-color:var(--petal-base)"/>
+        <stop offset=".38" style="stop-color:var(--petal-mid)"/>
+        <stop offset=".78" style="stop-color:var(--petal-light)"/>
+        <stop offset="1"   style="stop-color:var(--petal-tip)"/>
+      </linearGradient>
+      <linearGradient id="gSide" x1="0" y1="0" x2="1" y2="0">
+        <stop offset="0"   stop-color="#fff"    stop-opacity=".16"/>
+        <stop offset=".45" stop-color="#fff"    stop-opacity="0"/>
+        <stop offset="1"   stop-color="#5a2c00" stop-opacity=".28"/>
+      </linearGradient>
+      <linearGradient id="gBase" x1="0" y1="1" x2="0" y2="0">
+        <stop offset="0"   stop-color="#1c0b00" stop-opacity=".82"/>
+        <stop offset=".3"  stop-color="#1c0b00" stop-opacity=".32"/>
+        <stop offset=".55" stop-color="#1c0b00" stop-opacity="0"/>
+      </linearGradient>
+    </defs>
+  </svg>
+
+  <main id="stage">
+    <div class="bg bg--night"></div>
+    <div class="bg bg--final"></div>
+
+    <!-- EL GIRASOL ES LA PÁGINA -->
+    <div id="flower" class="flower">
+      <div class="flower__inner">
+        <div id="disc" class="disc"></div>
+        <div id="layerPetals" class="layer layer--petals"></div>
+        <div id="layerFall" class="layer layer--fall"></div>
+      </div>
+    </div>
+
+    <div id="veil" class="veil"></div>
+    <div class="vignette"></div>
+    <div class="grain"></div>
+
+    <div id="message" class="message" aria-live="polite">
+      <img id="messagePhoto" class="message__photo" alt="" hidden>
+      <p id="messageText" class="message__text"></p>
+    </div>
+    <p id="hint" class="hint"></p>
+
+    <!-- Pantalla final -->
+    <section id="final" class="final" hidden>
+      <div class="final__stage">
+        <p id="finalLine1" class="final__line"></p>
+        <p id="finalLine2" class="final__line"></p>
+        <div class="final__end">
+          <h2 id="finalLove" class="final__love"></h2>
+          <div id="finalEmoji" class="final__emoji" aria-hidden="true"></div>
+          <p id="finalDate" class="final__date"></p>
+          <p id="finalFrom" class="final__from"></p>
+        </div>
+      </div>
+      <button id="replayBtn" class="replay" type="button"></button>
+    </section>
+
+    <button id="soundBtn" class="sound" type="button" aria-label="Activar o desactivar la música" aria-pressed="false">
+      <svg class="ico-on" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 9.5v5h3.5L12 18.5v-13L7.5 9.5H4z"/><path d="M15.5 9a4 4 0 0 1 0 6"/><path d="M18 6.5a7.5 7.5 0 0 1 0 11"/></svg>
+      <svg class="ico-off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 9.5v5h3.5L12 18.5v-13L7.5 9.5H4z"/><path d="M16 9.5l5 5M21 9.5l-5 5"/></svg>
+    </button>
+
+    <button id="nextBtn" class="sr-only" type="button">Quitar un pétalo</button>
+
+    <!-- Introducción -->
+    <section id="intro" class="intro">
+      <div class="intro__inner">
+        <p id="introText" class="intro__text"></p>
+        <button id="startBtn" class="btn" type="button"></button>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
