@@ -7,12 +7,12 @@ const CONFIG = {
   pageTitle: "Para ti",
 
   // Si lo llenas, la introducción queda: "Mi amor, hay algunas cosas que quiero decirte."
-  recipientName: "",
+  recipientName: "Luna",
   // Firma pequeña al final (ej. "— Italo"). Vacío = sin firma.
-  fromName: "",
+  fromName: "La persona que mas te ama, Italo",
 
   intro: {
-    text: "Hay algunas cosas que quiero decirte.",
+    text: "quiero decirte cosas lindas justo como te gusta",
     button: "Empezar",
   },
   hint: "Toca un pétalo",
@@ -28,31 +28,31 @@ const CONFIG = {
   // Se usan los primeros (petalCount - 2). Los dos últimos pétalos son especiales.
   // ------------------------------------------------------------------------
   messages: [
-    "Me encanta cómo te ríes.",
-    "Me encanta la forma en que haces especiales los días normales.",
-    "Me encanta cómo te preocupas por las personas que quieres.",
-    "Me encanta poder ser yo mismo contigo.",
-    "Me encantan esos pequeños detalles que probablemente ni siquiera notas.",
-    "Me encanta cómo te emocionas con las cosas que te gustan.",
-    "Me encanta que contigo hasta el silencio sea cómodo.",
-    "Me encanta tu manera de mirar, como si nada se te escapara.",
-    "Me encanta que seas mi lugar favorito al final del día.",
-    "Me encanta cómo haces que lo difícil pese un poco menos.",
-    "Me encanta quién soy cuando estoy contigo.",
+    "Me encanta como te ries y como tu brillo llena mi alma cuando me sonries",
+    "Me encanta la forma en la que dices mi nombre en las llamadas",
+    "Me encanta como te preocupas por todo el mundo a tu alrededor",
+    "Me encanta no tener que ocultarte mi yo",
+    "Me encantan esos pequeños detalles en tu personalidad que te hacen diferente al resto",
+    "Me encanta como tus ojitos se iluminan cuando me cuentas sobre tu día",
+    "Me encanta que contigo pueda quedarme callado sin miedo a que algo malo pase",
+    "Me encanta tu forma de mirarme, estoy enamoradisimo de tus ojos",
+    "Me encanta que siempre quieras hacer todo conmigo",
+    "Me encanta como haces que me tranquilice cuando lo necesito",
+    "Me encanta cuando nos reimos juntos en llamada",
   ],
 
   // Al retirar el penúltimo pétalo:
-  penultimateMessage: "Y todavía me faltan muchas cosas.",
+  penultimateMessage: "Y me encantaría decir más cosas lindas sobre ti",
   // Al retirar el último (opcional; vacío = pasa directo a la pantalla final):
-  lastMessage: "",
+  lastMessage: "Pero debo guardar mis palabras para nuestra boda",
 
   // ✏️  Textos de la pantalla final
   final: {
-    line1: "Podría seguir quitando pétalos hasta quedarme sin girasol...",
-    line2: "...pero creo que ya entendiste.",
-    love: "Te quiero.",
+    line1: "Se que quizás no es lo que hubieras querido",
+    line2: "pero aun así quise hacerlo especial",
+    love: "Te amo<3",
     emoji: "🌻",
-    date: "Feliz día de las flores amarillas.",
+    date: "Feliz día de las flores amarillas mi querida",
     replay: "Volver a empezar",
     showReplay: true,
   },
