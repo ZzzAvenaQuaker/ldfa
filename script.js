@@ -12,7 +12,7 @@ const CONFIG = {
   fromName: "La persona que mas te ama, Italo",
 
   intro: {
-    text: "quiero decirte cosas lindas justo como te gusta",
+    text: "quiero decirte cosas lindas justo como quieres que lo haga",
     button: "Empezar",
   },
   hint: "Toca un pétalo",
@@ -44,7 +44,7 @@ const CONFIG = {
   // Al retirar el penúltimo pétalo:
   penultimateMessage: "Y me encantaría decir más cosas lindas sobre ti",
   // Al retirar el último (opcional; vacío = pasa directo a la pantalla final):
-  lastMessage: "Pero debo guardar mis palabras para nuestra boda",
+  lastMessage: "Pero debo guardar mis palabras para nuestra boda jsjs..",
 
   // ✏️  Textos de la pantalla final
   final: {
